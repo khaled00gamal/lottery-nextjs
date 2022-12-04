@@ -2,10 +2,16 @@ import { useMoralis } from "react-moralis";
 import { useEffect } from "react";
 
 export default function HardHeader() {
-  const { enableWeb3, account, isWeb3Enabled, Moralis, deactivateWeb3 } =
-    useMoralis();
+  const {
+    enableWeb3,
+    account,
+    isWeb3Enabled,
+    Moralis,
+    deactivateWeb3,
+    isWeb3EnableLoading,
+  } = useMoralis();
 
-  // useEffect checks dependenceies array for changes,
+  // useEffectis a react hook that checks dependenceies array for changes,
   // and calls the function passed to it when that happens,
   //then rerenders the ui
   //this use effect checks if we are connected
@@ -49,6 +55,7 @@ export default function HardHeader() {
               window.localStorage.setItem("connected", "injected");
             }
           }}
+          disabled={isWeb3EnableLoading()}
         >
           connect wallet
         </button>

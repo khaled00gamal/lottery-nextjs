@@ -1,7 +1,9 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import HardHeader from "../components/HardHeader";
+//import HardHeader from "../components/HardHeader";
+import Header from "../components/EasyHeader";
+import LotteryEntrance from "../components/LotteryEntrance";
 
 export default function Home() {
   return (
@@ -15,7 +17,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {/* adding custom header */}
-      <HardHeader />
+      <Header />
+      <LotteryEntrance />
     </div>
   );
 }
